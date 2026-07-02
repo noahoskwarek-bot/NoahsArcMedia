@@ -19,6 +19,11 @@
             overflow-x: hidden;
             box-sizing: border-box;
         }
+        
+        body {
+            position: relative;
+            overflow-x: hidden;
+        }
        
         .tail-container {
             font-family: 'Inter', system_ui, sans-serif;
@@ -36,8 +41,21 @@
         
         @media (max-width: 768px) {
             .hero-bg {
-                background-attachment: scroll;
+                background-attachment: scroll !important;
             }
+        }
+        
+        .film-grain::after {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+        
+        /* Chrome mobile fix for fixed elements */
+        nav, #mobile-menu {
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
         }
         
         .card-hover {
@@ -147,7 +165,7 @@
     </nav>
 
     <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-[76px] bg-zinc-950 border-b border-amber-900 z-40 w-full">
+    <div id="mobile-menu" class="hidden md:hidden fixed left-0 right-0 top-[76px] bg-zinc-950 border-b border-amber-900 z-40 w-full">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col gap-2 text-lg">
             <a href="#services" class="mobile-nav-link text-zinc-300 hover:text-amber-300 py-3 px-2">Services</a>
             <a href="#portfolio" class="mobile-nav-link text-zinc-300 hover:text-amber-300 py-3 px-2">Portfolio</a>
