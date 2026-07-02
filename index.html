@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
     <title>Noah's Arc Media | Custom Tribute Videos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -11,6 +11,13 @@
        
         :root {
             --gold: #d4af37;
+        }
+       
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            box-sizing: border-box;
         }
        
         .tail-container {
@@ -102,20 +109,12 @@
         .mobile-nav-link {
             transition: color 0.2s ease;
         }
-        
-        /* Force full width on mobile - removes any right margin */
-        @media (max-width: 640px) {
-            .section-container {
-                padding-left: 1.25rem;
-                padding-right: 1.25rem;
-            }
-        }
     </style>
 </head>
 <body class="tail-container bg-zinc-950 text-zinc-100 overflow-x-hidden">
     <!-- NAV -->
     <nav class="bg-black/90 backdrop-blur-lg fixed w-full z-50 border-b border-amber-900">
-        <div class="max-w-7xl mx-auto px-5 md:px-6 py-5 flex items-center justify-between">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-8 py-5 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <a href="http://www.noahsarcmedia.com/" class="hover:opacity-80 transition-opacity">
                     <span class="text-2xl font-bold heading-font tracking-wider text-amber-300">NOAH'S ARC</span>
@@ -123,7 +122,6 @@
                 </a>
             </div>
            
-            <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="#services" class="nav-link text-zinc-300 hover:text-amber-300">Services</a>
                 <a href="#portfolio" class="nav-link text-zinc-300 hover:text-amber-300">Portfolio</a>
@@ -141,7 +139,6 @@
                     START YOUR STORY
                 </button>
                 
-                <!-- Mobile Hamburger -->
                 <button id="mobile-menu-btn" class="md:hidden text-2xl w-10 h-10 flex items-center justify-center">
                     <i class="fa-solid fa-bars"></i>
                 </button>
@@ -149,9 +146,9 @@
         </div>
     </nav>
 
-    <!-- MOBILE MENU - Now truly full width -->
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-[76px] bg-zinc-950 border-b border-amber-900 z-40">
-        <div class="max-w-7xl mx-auto px-5 md:px-6 py-8 flex flex-col gap-2 text-lg">
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-[76px] bg-zinc-950 border-b border-amber-900 z-40 w-full">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col gap-2 text-lg">
             <a href="#services" class="mobile-nav-link text-zinc-300 hover:text-amber-300 py-3 px-2">Services</a>
             <a href="#portfolio" class="mobile-nav-link text-zinc-300 hover:text-amber-300 py-3 px-2">Portfolio</a>
             <a href="#how" class="mobile-nav-link text-zinc-300 hover:text-amber-300 py-3 px-2">How it Works</a>
@@ -169,7 +166,7 @@
 
     <!-- HERO -->
     <header class="hero-bg min-h-[85vh] md:min-h-[80vh] flex items-center relative film-grain pt-16 md:pt-20">
-        <div class="max-w-5xl mx-auto px-5 md:px-6 text-center relative z-10 pt-20">
+        <div class="w-full max-w-5xl mx-auto px-5 md:px-8 text-center relative z-10">
             <h1 class="heading-font text-6xl sm:text-7xl md:text-8xl font-bold leading-none mb-6 text-white">
                 TURNING MEMORIES<br>INTO <span class="text-amber-300">MASTERPIECES</span>
             </h1>
@@ -196,7 +193,7 @@
 
     <!-- SERVICES -->
     <section id="services" class="py-20 md:py-24 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-5 md:px-6 section-container">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
             <div class="text-center mb-14">
                 <span class="text-amber-400 text-sm tracking-[3px]">WHAT WE CREATE</span>
                 <h2 class="heading-font text-4xl md:text-5xl font-semibold mt-3">Signature Tribute Experiences</h2>
@@ -232,7 +229,7 @@
 
     <!-- PORTFOLIO -->
     <section id="portfolio" class="py-20 md:py-24 bg-black">
-        <div class="max-w-7xl mx-auto px-5 md:px-6 section-container">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
             <div class="flex justify-between items-end mb-10">
                 <div>
                     <span class="text-amber-400 tracking-widest">GALLERY</span>
@@ -241,14 +238,13 @@
             </div>
            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
-                <!-- Populated by JS -->
             </div>
         </div>
     </section>
 
     <!-- HOW IT WORKS -->
     <section id="how" class="py-20 md:py-24 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-5 md:px-6 section-container">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
             <div class="text-center mb-14">
                 <h2 class="heading-font text-4xl md:text-5xl font-semibold">How Your Story Comes to Life</h2>
             </div>
@@ -279,7 +275,7 @@
 
     <!-- TESTIMONIALS -->
     <section class="py-20 md:py-24 bg-black">
-        <div class="max-w-6xl mx-auto px-5 md:px-6 section-container">
+        <div class="w-full max-w-6xl mx-auto px-5 md:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-zinc-900 p-8 rounded-3xl">
                     <p class="italic text-lg">"The video they made for Lucas's graduation brought our whole family to tears. It perfectly captured his journey on the tennis team."</p>
@@ -319,7 +315,7 @@
 
     <!-- PRICING -->
     <section id="pricing" class="py-20 md:py-24 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-5 md:px-6 section-container text-center">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-8 text-center">
             <h2 class="heading-font text-4xl md:text-5xl font-semibold mb-4">Simple, Transparent Pricing</h2>
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-14">
                 <div class="bg-zinc-800 border border-zinc-700 rounded-3xl p-10">
@@ -356,7 +352,7 @@
 
     <!-- CONTACT -->
     <section id="contact" class="py-20 md:py-24 bg-black">
-        <div class="max-w-2xl mx-auto px-5 md:px-6 section-container">
+        <div class="w-full max-w-2xl mx-auto px-5 md:px-8">
             <div class="text-center mb-12">
                 <h2 class="heading-font text-4xl md:text-5xl font-semibold">Begin Your Tribute Today</h2>
                 <p class="text-xl text-zinc-400 mt-4">We'll reply within 24 hours</p>
@@ -373,7 +369,7 @@
 
     <!-- FOOTER -->
     <footer class="bg-zinc-950 py-12 border-t border-zinc-800">
-        <div class="max-w-7xl mx-auto px-5 md:px-6 text-center">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-8 text-center">
             <p class="text-zinc-400">© 2026 Noah's Arc Media. Preserving life's most precious arcs.</p>
         </div>
     </footer>
