@@ -238,113 +238,124 @@
     </div>
 
 <script>
-    // Tailwind already loaded
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
 
-    function toggleDarkMode() {
-        alert("Dark mode is already active on this premium cinematic website ✨");
-    }
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    // Mobile Menu
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    function toggleMobileMenu() {
-        mobileMenu.classList.toggle('hidden');
-    }
-
-    mobileBtn.addEventListener('click', toggleMobileMenu);
-
-    // Smooth scrolling with offset for fixed navbar
-    function smoothScrollTo(targetId) {
-        const target = document.getElementById(targetId);
-        if (target) {
-            const navHeight = 80; // Height of your fixed nav
-            const targetPosition = target.getBoundingClientRect().top + window.scrollY;
-            
-            window.scrollTo({
-                top: targetPosition - navHeight,
-                behavior: 'smooth'
-            });
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
         }
-    }
 
-    // Handle all navigation links (desktop + mobile)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href').substring(1);
-            
-            if (targetId) {
-                e.preventDefault();
-                smoothScrollTo(targetId);
-                
-                // Close mobile menu if open
-                if (!mobileMenu.classList.contains('hidden')) {
-                    toggleMobileMenu();
-                }
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', toggleMobileMenu);
+        }
+
+        // Smooth Scroll Function
+        function smoothScrollTo(targetId) {
+            const target = document.getElementById(targetId);
+            if (target) {
+                const navHeight = 85; // Fixed nav height
+                const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+                const offsetPosition = elementPosition - navHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
             }
+        }
+
+        // Attach click handlers to ALL navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href').substring(1);
+                
+                if (targetId) {
+                    e.preventDefault();           // Stop default jump
+                    smoothScrollTo(targetId);
+                    
+                    // Close mobile menu after clicking
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        toggleMobileMenu();
+                    }
+                }
+            });
         });
-    });
 
-    // Portfolio
-    const portfolioItems = [
-        { title: "Lucas Graduation Tribute", category: "Graduation", thumb: "https://picsum.photos/id/1015/600/400", video: "https://www.youtube.com/embed/dQw4w9wgxcq" },
-        { title: "PHS Tennis Season 2026", category: "Sports", thumb: "https://picsum.photos/id/201/600/400", video: "https://www.youtube.com/embed/dQw4w9wgxcq" },
-        { title: "25th Anniversary Film", category: "Anniversary", thumb: "https://picsum.photos/id/133/600/400", video: "https://www.youtube.com/embed/dQw4w9wgxcq" }
-    ];
+        // Portfolio Rendering
+        const portfolioItems = [
+            { title: "Lucas Graduation Tribute", category: "Graduation", thumb: "https://picsum.photos/id/1015/600/400", video: "https://www.youtube.com/embed/dQw4w9wgxcq" },
+            { title: "PHS Tennis Season 2026", category: "Sports", thumb: "https://picsum.photos/id/201/600/400", video: "https://www.youtube.com/embed/dQw4w9wgxcq" },
+            { title: "25th Anniversary Film", category: "Anniversary", thumb: "https://picsum.photos/id/133/600/400", video: "https://www.youtube.com/embed/dQw4w9wgxcq" }
+        ];
 
-    function renderPortfolio() {
-        const container = document.getElementById('portfolio-grid');
-        container.innerHTML = portfolioItems.map(item => `
-            <div onclick="playVideo('${item.video}', '${item.title}')"
-                 class="group cursor-pointer bg-zinc-800 rounded-3xl overflow-hidden">
-                <div class="relative">
-                    <img src="${item.thumb}" class="w-full h-64 object-cover transition-transform group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                        <div>
-                            <p class="text-amber-300 text-xs">${item.category}</p>
-                            <p class="font-medium text-lg">${item.title}</p>
+        function renderPortfolio() {
+            const container = document.getElementById('portfolio-grid');
+            if (container) {
+                container.innerHTML = portfolioItems.map(item => `
+                    <div onclick="playVideo('${item.video}', '${item.title}')"
+                         class="group cursor-pointer bg-zinc-800 rounded-3xl overflow-hidden">
+                        <div class="relative">
+                            <img src="${item.thumb}" class="w-full h-64 object-cover transition-transform group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                                <div>
+                                    <p class="text-amber-300 text-xs">${item.category}</p>
+                                    <p class="font-medium text-lg">${item.title}</p>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i class="fa-solid fa-play text-5xl text-white/80 group-hover:scale-110 transition-transform"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i class="fa-solid fa-play text-5xl text-white/80 group-hover:scale-110 transition-transform"></i>
-                    </div>
-                </div>
-            </div>
-        `).join('');
-    }
+                `).join('');
+            }
+        }
 
-    function playVideo(videoUrl, title) {
-        const modal = document.getElementById('video-modal');
-        const container = document.getElementById('modal-video-container');
-        container.innerHTML = `
-            <iframe width="100%" height="100%"
-                    src="${videoUrl}"
-                    title="${title}"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-        `;
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-    }
+        // Modal Functions
+        window.playVideo = function(videoUrl, title) {
+            const modal = document.getElementById('video-modal');
+            const container = document.getElementById('modal-video-container');
+            if (container) {
+                container.innerHTML = `
+                    <iframe width="100%" height="100%" 
+                            src="${videoUrl}" 
+                            title="${title}" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                `;
+            }
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        };
 
-    function closeModal() {
-        const modal = document.getElementById('video-modal');
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-    }
+        window.closeModal = function() {
+            const modal = document.getElementById('video-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        };
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        alert("Thank you! Your message has been received. We'll contact you shortly to begin crafting your tribute.");
-        e.target.reset();
-    }
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert("Thank you! Your message has been received. We'll contact you shortly.");
+            e.target.reset();
+        }
 
-    // Initialize
-    window.onload = function() {
+        // Make handleSubmit available globally
+        window.handleSubmit = handleSubmit;
+
+        // Initialize everything
         renderPortfolio();
-        console.log('%cNoah\'s Arc Media - Premium Tribute Videos ready ✨', 'color:#d4af37; font-family:monospace');
-    };
+        console.log('%cNoah\'s Arc Media - Ready for mobile & desktop ✨', 'color:#d4af37; font-family:monospace');
+    });
 </script>
 </body>
 </html>
