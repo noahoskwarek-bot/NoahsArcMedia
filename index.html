@@ -181,16 +181,21 @@
         </div>
     </div>
 
-    <!-- HERO -->
+    <!-- HERO - Fixed arrow position -->
     <header class="hero-bg min-h-[85vh] md:min-h-[82vh] flex items-center justify-center relative film-grain pt-16 md:pt-24 lg:pt-28">
-        <div class="w-full max-w-5xl mx-auto px-5 md:px-8 text-center relative z-10">
+        <div class="w-full max-w-5xl mx-auto px-5 md:px-8 text-center relative z-10 pb-16">
+            
+            <!-- Headline -->
             <h1 class="heading-font text-6xl sm:text-7xl md:text-7xl lg:text-8xl font-bold leading-none mb-6 text-white">
                 Where Memories Find Their <span class="text-amber-300">Forever</span>
             </h1>
+            
             <p class="text-xl md:text-2xl text-zinc-300 max-w-2xl mx-auto mb-10">
                 Premium cinematic tribute videos for life's most important moments.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
                         class="bg-amber-300 text-zinc-950 hover:bg-amber-200 px-10 py-6 rounded-2xl text-lg font-semibold flex items-center justify-center gap-3 transition-all">
                     <span>CREATE YOUR VIDEO</span>
@@ -201,9 +206,11 @@
                     VIEW EXAMPLES
                 </button>
             </div>
+
         </div>
-       
-        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+
+        <!-- Bouncing Arrow - Now below the buttons -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
             <i class="fa-solid fa-chevron-down text-4xl text-amber-300/70"></i>
         </div>
     </header>
@@ -554,7 +561,7 @@
             container.innerHTML = '';
         }
 
-        // Contact Form AJAX + Reset
+        // Contact Form with AJAX
         const contactForm = document.getElementById('contact-form');
         const submitBtn = document.getElementById('submit-btn');
         const successMessage = document.getElementById('form-success');
