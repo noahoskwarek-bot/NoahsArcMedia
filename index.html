@@ -213,7 +213,7 @@
         </div>
     </header>
 
-    <!-- SERVICES -->
+    <!-- SERVICES (Gallery-style cards - Now clickable) -->
     <section id="services" class="py-20 md:py-24 bg-zinc-900 pt-20 md:pt-0">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
             <div class="text-center mb-14 pt-6 md:pt-0">
@@ -222,7 +222,10 @@
             </div>
            
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-hover bg-zinc-800/70 border border-zinc-700 rounded-3xl overflow-hidden group">
+                
+                <!-- Graduation - Clickable -->
+                <div onclick="playVideo('https://www.youtube.com/embed/fNghcZdeVIE', 'Graduation Chronicles')" 
+                     class="card-hover bg-zinc-800/70 border border-zinc-700 rounded-3xl overflow-hidden group cursor-pointer">
                     <div class="h-56 bg-[url('https://images.unsplash.com/photo-1523240795612-9a054b0db644')] bg-cover bg-center"></div>
                     <div class="p-8">
                         <h3 class="text-2xl font-semibold mb-2">Graduation Chronicles</h3>
@@ -230,7 +233,9 @@
                     </div>
                 </div>
                
-                <div class="card-hover bg-zinc-800/70 border border-zinc-700 rounded-3xl overflow-hidden group">
+                <!-- Team Victory - Clickable -->
+                <div onclick="playVideo('https://www.youtube.com/embed/pYu8nO4OlgY', 'Team Victory Reels')" 
+                     class="card-hover bg-zinc-800/70 border border-zinc-700 rounded-3xl overflow-hidden group cursor-pointer">
                     <div class="h-56 bg-[url('https://images.unsplash.com/photo-1546519638-68e109498ffc')] bg-cover bg-center"></div>
                     <div class="p-8">
                         <h3 class="text-2xl font-semibold mb-2">Team Victory Reels</h3>
@@ -238,7 +243,9 @@
                     </div>
                 </div>
                
-                <div class="card-hover bg-zinc-800/70 border border-zinc-700 rounded-3xl overflow-hidden group">
+                <!-- Life Chapter - Clickable -->
+                <div onclick="playVideo('https://www.youtube.com/embed/3VkJ8WM04m0', 'Life Chapter Films')" 
+                     class="card-hover bg-zinc-800/70 border border-zinc-700 rounded-3xl overflow-hidden group cursor-pointer">
                     <div class="h-56 bg-[url('https://images.unsplash.com/photo-1511895426328-dc8714191300')] bg-cover bg-center"></div>
                     <div class="p-8">
                         <h3 class="text-2xl font-semibold mb-2">Life Chapter Films</h3>
@@ -249,7 +256,7 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO - Updated with your YouTube links -->
+    <!-- PORTFOLIO (Reverted to generic) -->
     <section id="portfolio" class="py-20 md:py-24 bg-black pt-20 md:pt-0">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
             <div class="flex justify-between items-end mb-10 pt-6 md:pt-0">
@@ -480,26 +487,11 @@
             }, 900);
         }
 
-        // Updated Portfolio with your YouTube links
+        // Portfolio reverted to generic placeholders
         const portfolioItems = [
-            { 
-                title: "Graduation Tribute", 
-                category: "Graduation", 
-                thumb: "https://picsum.photos/id/1015/600/400", 
-                video: "https://www.youtube.com/embed/fNghcZdeVIE" 
-            },
-            { 
-                title: "Team Victory Highlight Reel", 
-                category: "Sports", 
-                thumb: "https://picsum.photos/id/201/600/400", 
-                video: "https://www.youtube.com/embed/pYu8nO4OlgY" 
-            },
-            { 
-                title: "Life Chapter Film", 
-                category: "Life Story", 
-                thumb: "https://picsum.photos/id/133/600/400", 
-                video: "https://www.youtube.com/embed/3VkJ8WM04m0" 
-            }
+            { title: "Sample Graduation Video", category: "Graduation", thumb: "https://picsum.photos/id/1015/600/400", video: "https://www.youtube.com/embed/dQw4w9wgxcq" },
+            { title: "Sample Team Highlight", category: "Sports", thumb: "https://picsum.photos/id/201/600/400", video: "https://www.youtube.com/embed/dQw4w9wgxcq" },
+            { title: "Sample Life Story Film", category: "Life Story", thumb: "https://picsum.photos/id/133/600/400", video: "https://www.youtube.com/embed/dQw4w9wgxcq" }
         ];
 
         function renderPortfolio() {
