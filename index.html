@@ -117,6 +117,11 @@
             0% { transform: scale(0.7); opacity: 0; }
             100% { transform: scale(1); opacity: 1; }
         }
+
+        /* Fix for fixed navbar hiding section headers on click */
+        section {
+            scroll-margin-top: 90px;
+        }
     </style>
 </head>
 <body class="tail-container bg-zinc-950 text-zinc-100 overflow-x-hidden">
@@ -211,8 +216,6 @@
             </div>
            
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Graduation Chronicles -->
                 <div class="card-hover bg-zinc-800/70 border border-zinc-700 rounded-3xl overflow-hidden group">
                     <div class="h-56 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1')] bg-cover bg-center"></div>
                     <div class="p-8">
@@ -221,7 +224,6 @@
                     </div>
                 </div>
                
-                <!-- Team Victory Reels - Updated -->
                 <div class="card-hover bg-zinc-800/70 border border-zinc-700 rounded-3xl overflow-hidden group">
                     <div class="h-56 bg-[url('https://images.unsplash.com/photo-1574629810360-7efbbe195018')] bg-cover bg-center"></div>
                     <div class="p-8">
@@ -230,7 +232,6 @@
                     </div>
                 </div>
                
-                <!-- Life Chapter Films - Updated -->
                 <div class="card-hover bg-zinc-800/70 border border-zinc-700 rounded-3xl overflow-hidden group">
                     <div class="h-56 bg-[url('https://images.unsplash.com/photo-1519741497674-611481863552')] bg-cover bg-center"></div>
                     <div class="p-8">
