@@ -28,7 +28,6 @@
             font-family: 'Playfair Display', sans-serif;
         }
         
-        /* Even Brighter Hero Background */
         .hero-bg {
             background: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.58)),
                         url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba') center/cover;
@@ -172,7 +171,7 @@
 
     <!-- HERO -->
     <header class="hero-bg min-h-[85vh] md:min-h-[82vh] flex items-center justify-center relative film-grain pt-20 md:pt-24 lg:pt-28">
-        <div class="w-full max-w-5xl mx-auto px-5 md:px-8 text-center relative z-10 pb-16">
+        <div class="w-full max-w-5xl mx-auto px-5 md:px-8 text-center relative z-10 pt-8 md:pt-0 pb-16">
             
             <h1 class="heading-font text-6xl sm:text-7xl md:text-7xl lg:text-8xl font-bold leading-none mb-6 text-white">
                 Where Memories Find Their <span class="text-[#C9A96E]">Forever</span>
@@ -196,13 +195,16 @@
 
         </div>
 
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
-            <i class="fa-solid fa-chevron-down text-4xl text-[#C9A96E]"></i>
+        <!-- Centered Bouncing Arrow -->
+        <div class="absolute bottom-8 left-0 right-0 flex justify-center z-10">
+            <div class="animate-bounce">
+                <i class="fa-solid fa-chevron-down text-4xl text-[#C9A96E]"></i>
+            </div>
         </div>
     </header>
 
     <!-- SERVICES -->
-    <section id="services" class="py-20 md:py-24 bg-zinc-900">
+    <section id="services" class="py-20 md:py-24 bg-zinc-900 pt-20 md:pt-0">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
             <div class="text-center mb-14">
                 <span class="text-[#C9A96E] text-sm tracking-[3px]">WHAT WE CREATE</span>
@@ -238,7 +240,7 @@
     </section>
 
     <!-- PORTFOLIO -->
-    <section id="portfolio" class="py-20 md:py-24 bg-black">
+    <section id="portfolio" class="py-20 md:py-24 bg-black pt-20 md:pt-0">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
             <div class="flex justify-between items-end mb-10">
                 <div>
@@ -253,7 +255,7 @@
     </section>
 
     <!-- HOW IT WORKS -->
-    <section id="how" class="py-20 md:py-24 bg-zinc-900">
+    <section id="how" class="py-20 md:py-24 bg-zinc-900 pt-20 md:pt-0">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
             <div class="text-center mb-14">
                 <h2 class="heading-font text-4xl md:text-5xl font-semibold">How Your Story Comes to Life</h2>
@@ -284,7 +286,7 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="py-20 md:py-24 bg-black">
+    <section class="py-20 md:py-24 bg-black pt-20 md:pt-0">
         <div class="w-full max-w-6xl mx-auto px-5 md:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-zinc-900 p-8 rounded-3xl">
@@ -324,7 +326,7 @@
     </section>
 
     <!-- PRICING -->
-    <section id="pricing" class="py-20 md:py-24 bg-zinc-900">
+    <section id="pricing" class="py-20 md:py-24 bg-zinc-900 pt-20 md:pt-0">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8 text-center">
             <h2 class="heading-font text-4xl md:text-5xl font-semibold mb-4">Simple, Transparent Pricing</h2>
             <p class="text-zinc-400 max-w-md mx-auto mb-12">Choose the experience that fits your story. All packages include cinematic editing and emotional storytelling.</p>
@@ -377,7 +379,7 @@
     </section>
 
     <!-- CONTACT FORM -->
-    <section id="contact" class="py-20 md:py-24 bg-black">
+    <section id="contact" class="py-20 md:py-24 bg-black pt-20 md:pt-0">
         <div class="w-full max-w-2xl mx-auto px-5 md:px-8">
             <div class="text-center mb-12">
                 <h2 class="heading-font text-4xl md:text-5xl font-semibold">Begin Your Tribute Today</h2>
