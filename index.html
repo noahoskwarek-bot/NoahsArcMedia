@@ -11,6 +11,7 @@
        
         :root {
             --gold: #d4af37;
+            --logo-gold: #C9A96E; /* Color from your logo's "MEDIA" text */
         }
        
         html, body {
@@ -129,18 +130,17 @@
     </style>
 </head>
 <body class="tail-container bg-zinc-950 text-zinc-100 overflow-x-hidden">
-    <!-- NAV (Clean - Logo only, no extra text) -->
+    <!-- NAV -->
     <nav class="bg-black/90 backdrop-blur-lg fixed w-full z-50 border-b border-amber-900">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8 py-5 flex items-center justify-between">
             
-            <!-- Logo Only -->
+            <!-- Logo -->
             <div class="flex items-center">
                 <a href="http://www.noahsarcmedia.com/" class="hover:opacity-80 transition-opacity">
                     <img src="Screenshot 2026-07-03 090254.png" alt="Noah's Arc Media" class="h-11 w-auto">
                 </a>
             </div>
            
-            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="#services" class="nav-link text-zinc-300 hover:text-amber-300">Services</a>
                 <a href="#portfolio" class="nav-link text-zinc-300 hover:text-amber-300">Portfolio</a>
@@ -209,7 +209,6 @@
 
         </div>
 
-        <!-- Bouncing Arrow -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
             <i class="fa-solid fa-chevron-down text-4xl text-amber-300/70"></i>
         </div>
@@ -360,7 +359,8 @@
               
                 <!-- Signature - Most Popular -->
                 <div class="bg-gradient-to-b from-amber-300 to-amber-400 text-zinc-950 rounded-3xl p-10 md:scale-105 shadow-2xl flex flex-col">
-                    <div class="uppercase text-xs tracking-widest font-semibold mb-1">Most Popular</div>
+                    <!-- Updated to logo's "MEDIA" color -->
+                    <div class="uppercase text-xs tracking-widest font-semibold mb-1 text-[#C9A96E]">Most Popular</div>
                     <h3 class="text-3xl font-bold mb-2">Signature</h3>
                     <div class="text-7xl font-light my-6">$899</div>
                     <ul class="space-y-4 text-left mb-10 flex-grow">
@@ -372,7 +372,7 @@
                     <button onclick="selectPackage('Signature')"
                             class="w-full bg-zinc-950 text-white py-5 rounded-2xl font-semibold mt-auto">Get Started</button>
                 </div>
-              
+               
                 <!-- Legacy -->
                 <div class="bg-zinc-800 border border-zinc-700 rounded-3xl p-10 flex flex-col">
                     <h3 class="text-2xl font-semibold mb-2">Legacy</h3>
