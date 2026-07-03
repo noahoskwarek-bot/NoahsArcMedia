@@ -118,9 +118,15 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
-        /* Increased spacing after clicking nav links */
+        /* Responsive scroll offset for fixed navbar */
         section {
-            scroll-margin-top: 150px;
+            scroll-margin-top: 100px; /* Mobile */
+        }
+
+        @media (min-width: 768px) {
+            section {
+                scroll-margin-top: 150px; /* Desktop */
+            }
         }
     </style>
 </head>
