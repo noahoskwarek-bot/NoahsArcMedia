@@ -205,7 +205,9 @@
 
         </div>
 
-        <div class="absolute bottom-8 left-0 right-0 flex justify-center z-10">
+        <!-- Bouncing Arrow - Now clickable -->
+        <div onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })" 
+             class="absolute bottom-8 left-0 right-0 flex justify-center z-10 cursor-pointer">
             <div class="animate-bounce">
                 <i class="fa-solid fa-chevron-down text-4xl text-[#C9A96E]"></i>
             </div>
