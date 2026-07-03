@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
-    <title>Noah's Arc Media | Custom Tribute Videos</title>
+    
+    <!-- SEO Title -->
+    <title>Noah's Arc Media | Custom Cinematic Tribute Videos | Graduation, Anniversary & Memorial</title>
+    
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Premium cinematic tribute videos that turn your most meaningful moments into timeless masterpieces. Specializing in graduation, sports, anniversary, and memorial videos crafted with heart and storytelling.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Noah's Arc Media | Custom Cinematic Tribute Videos">
+    <meta property="og:description" content="We create premium cinematic tribute videos for life's most important moments — graduations, anniversaries, sports seasons, and memorials.">
+    <meta property="og:image" content="Screenshot 2026-07-03 090254.png">
+    <meta property="og:url" content="https://www.noahsarcmedia.com">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Noah's Arc Media | Custom Cinematic Tribute Videos">
+    <meta name="twitter:description" content="Premium cinematic tribute videos for graduations, anniversaries, sports, and memorials.">
+    <meta name="twitter:image" content="Screenshot 2026-07-03 090254.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');
        
@@ -130,6 +150,7 @@
     </style>
 </head>
 <body class="tail-container bg-zinc-950 text-zinc-100 overflow-x-hidden">
+
     <!-- NAV -->
     <nav class="bg-black/90 backdrop-blur-lg fixed w-full z-50 border-b border-amber-900">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8 py-5 flex items-center justify-between">
@@ -218,7 +239,6 @@
     <section id="services" class="py-20 md:py-24 bg-zinc-900">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
             <div class="text-center mb-14">
-                <!-- Updated to logo color -->
                 <span class="text-[#C9A96E] text-sm tracking-[3px]">WHAT WE CREATE</span>
                 <h2 class="heading-font text-4xl md:text-5xl font-semibold mt-3">Signature Tribute Experiences</h2>
             </div>
@@ -255,7 +275,6 @@
     <section id="portfolio" class="py-20 md:py-24 bg-black">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
             <div class="flex justify-between items-end mb-10">
-                <!-- Updated to logo color -->
                 <div>
                     <span class="text-[#C9A96E] tracking-widest">GALLERY</span>
                     <h2 class="heading-font text-4xl md:text-5xl font-semibold">Real Stories, Beautifully Told</h2>
@@ -401,7 +420,6 @@
            
             <form id="contact-form" action="https://formspree.io/f/xeebvqgr" method="POST" class="space-y-6">
                 
-                <!-- Updated label color -->
                 <div>
                     <label class="block text-sm text-[#C9A96E] mb-2">Interested Package</label>
                     <select name="package" id="package-select" required
@@ -452,6 +470,50 @@
             <div id="modal-video-container" class="aspect-video bg-black"></div>
         </div>
     </div>
+
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Noah's Arc Media",
+      "url": "https://www.noahsarcmedia.com",
+      "logo": "Screenshot 2026-07-03 090254.png",
+      "description": "Premium cinematic tribute videos for graduations, anniversaries, sports seasons, and memorials.",
+      "serviceType": "Custom Tribute Video Production",
+      "areaServed": ["Connecticut", "South Carolina"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Tribute Video Packages",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Essential Tribute Video",
+              "description": "Up to 6-minute cinematic tribute video"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Signature Tribute Video",
+              "description": "Up to 10-minute premium tribute video"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Legacy Tribute Video",
+              "description": "Up to 15-minute premium tribute video with extended features"
+            }
+          }
+        ]
+      }
+    }
+    </script>
 
     <script>
         function toggleDarkMode() {
