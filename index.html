@@ -249,7 +249,7 @@
         </div>
     </section>
 
-    <!-- GALLERY SECTION - Fixed YouTube Links -->
+    <!-- GALLERY SECTION (Real Stories, Beautifully Told) -->
     <section id="portfolio" class="py-20 md:py-24 bg-black pt-20 md:pt-0">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
             <div class="flex justify-between items-end mb-10 pt-6 md:pt-0">
@@ -480,7 +480,7 @@
             }, 900);
         }
 
-        // GALLERY items with your YouTube links
+        // GALLERY - Your 3 YouTube links
         const portfolioItems = [
             { 
                 title: "Lucas Graduation Tribute", 
@@ -495,7 +495,7 @@
                 video: "https://www.youtube.com/embed/pYu8nO4OlgY" 
             },
             { 
-                title: "25th Anniversary Film", 
+                title: "25th Anniversary File", 
                 category: "Anniversary", 
                 thumb: "https://picsum.photos/id/133/600/400", 
                 video: "https://www.youtube.com/embed/3VkJ8WM04m0" 
@@ -523,27 +523,22 @@
             `).join('');
         }
 
-        // Improved playVideo function
         function playVideo(videoUrl, title) {
             const modal = document.getElementById('video-modal');
             const container = document.getElementById('modal-video-container');
             
-            // Clear previous iframe
             container.innerHTML = '';
             
-            // Create new iframe
             const iframe = document.createElement('iframe');
-            iframe.setAttribute('width', '100%');
-            iframe.setAttribute('height', '100%');
-            iframe.setAttribute('src', videoUrl);
-            iframe.setAttribute('title', title);
-            iframe.setAttribute('frameborder', '0');
-            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-            iframe.setAttribute('allowfullscreen', 'true');
+            iframe.width = "100%";
+            iframe.height = "100%";
+            iframe.src = videoUrl;
+            iframe.title = title;
+            iframe.frameBorder = "0";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
             
             container.appendChild(iframe);
-            
-            // Show modal
             modal.classList.remove('hidden');
             modal.classList.add('flex');
         }
@@ -551,11 +546,8 @@
         function closeModal() {
             const modal = document.getElementById('video-modal');
             const container = document.getElementById('modal-video-container');
-            
             modal.classList.add('hidden');
             modal.classList.remove('flex');
-            
-            // Clear iframe to stop video
             container.innerHTML = '';
         }
 
