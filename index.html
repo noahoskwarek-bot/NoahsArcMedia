@@ -3,46 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
-    
-    <!-- SEO Title -->
-    <title>Noah's Arc Media | Custom Cinematic Tribute Videos | Graduation, Anniversary & Memorial</title>
-    
-    <!-- SEO Meta Description -->
-    <meta name="description" content="Premium cinematic tribute videos that turn your most meaningful moments into timeless masterpieces. Specializing in graduation, sports, anniversary, and memorial videos crafted with heart and storytelling.">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Noah's Arc Media | Custom Cinematic Tribute Videos">
-    <meta property="og:description" content="We create premium cinematic tribute videos for life's most important moments — graduations, anniversaries, sports seasons, and memorials.">
-    <meta property="og:image" content="Screenshot 2026-07-03 090254.png">
-    <meta property="og:url" content="https://www.noahsarcmedia.com">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Noah's Arc Media | Custom Cinematic Tribute Videos">
-    <meta name="twitter:description" content="Premium cinematic tribute videos for graduations, anniversaries, sports, and memorials.">
-    <meta name="twitter:image" content="Screenshot 2026-07-03 090254.png">
-
+    <title>Noah's Arc Media | Custom Cinematic Tribute Videos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');
        
         :root {
-            --gold: #d4af37;
             --logo-gold: #C9A96E;
+            --bright-gold: #d4af37;
         }
        
         html, body {
             width: 100%;
             max-width: 100%;
-            overflow-x: hidden;
-            box-sizing: border-box;
-        }
-        
-        body {
-            position: relative;
             overflow-x: hidden;
         }
        
@@ -143,10 +117,6 @@
             0% { transform: scale(0.7); opacity: 0; }
             100% { transform: scale(1); opacity: 1; }
         }
-        
-        .mobile-nav-link {
-            transition: color 0.2s ease;
-        }
     </style>
 </head>
 <body class="tail-container bg-zinc-950 text-zinc-100 overflow-x-hidden">
@@ -154,8 +124,6 @@
     <!-- NAV -->
     <nav class="bg-black/90 backdrop-blur-lg fixed w-full z-50 border-b border-amber-900">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8 py-5 flex items-center justify-between">
-            
-            <!-- Logo -->
             <div class="flex items-center">
                 <a href="http://www.noahsarcmedia.com/" class="hover:opacity-80 transition-opacity">
                     <img src="Screenshot 2026-07-03 090254.png" alt="Noah's Arc Media" class="h-11 w-auto">
@@ -163,19 +131,16 @@
             </div>
            
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="#services" class="nav-link text-zinc-300 hover:text-amber-300">Services</a>
-                <a href="#portfolio" class="nav-link text-zinc-300 hover:text-amber-300">Portfolio</a>
-                <a href="#how" class="nav-link text-zinc-300 hover:text-amber-300">How it Works</a>
-                <a href="#pricing" class="nav-link text-zinc-300 hover:text-amber-300">Pricing</a>
-                <a href="#contact" class="nav-link text-zinc-300 hover:text-amber-300">Contact</a>
+                <a href="#services" class="nav-link text-zinc-300 hover:text-[#C9A96E]">Services</a>
+                <a href="#portfolio" class="nav-link text-zinc-300 hover:text-[#C9A96E]">Portfolio</a>
+                <a href="#how" class="nav-link text-zinc-300 hover:text-[#C9A96E]">How it Works</a>
+                <a href="#pricing" class="nav-link text-zinc-300 hover:text-[#C9A96E]">Pricing</a>
+                <a href="#contact" class="nav-link text-zinc-300 hover:text-[#C9A96E]">Contact</a>
             </div>
             
             <div class="flex items-center gap-4">
-                <button onclick="toggleDarkMode()" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-zinc-800 transition-colors">
-                    <i class="fa-solid fa-moon text-amber-300"></i>
-                </button>
                 <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
-                        class="bg-amber-300 hover:bg-amber-200 text-zinc-950 px-6 py-2.5 rounded-full font-semibold text-sm transition-all hidden sm:block">
+                        class="bg-[#C9A96E] hover:bg-[#b38c55] text-zinc-950 px-6 py-2.5 rounded-full font-semibold text-sm transition-all hidden sm:block">
                     START YOUR STORY
                 </button>
                 
@@ -189,15 +154,15 @@
     <!-- MOBILE MENU -->
     <div id="mobile-menu" class="hidden md:hidden fixed left-0 right-0 top-[76px] bg-zinc-950 border-b border-amber-900 z-40 w-full">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col gap-2 text-lg">
-            <a href="#services" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-amber-300 py-3 px-2">Services</a>
-            <a href="#portfolio" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-amber-300 py-3 px-2">Portfolio</a>
-            <a href="#how" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-amber-300 py-3 px-2">How it Works</a>
-            <a href="#pricing" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-amber-300 py-3 px-2">Pricing</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-amber-300 py-3 px-2">Contact</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-[#C9A96E] py-3 px-2">Services</a>
+            <a href="#portfolio" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-[#C9A96E] py-3 px-2">Portfolio</a>
+            <a href="#how" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-[#C9A96E] py-3 px-2">How it Works</a>
+            <a href="#pricing" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-[#C9A96E] py-3 px-2">Pricing</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-[#C9A96E] py-3 px-2">Contact</a>
             
             <div class="pt-4 mt-2 border-t border-zinc-800">
                 <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); toggleMobileMenu();"
-                        class="w-full bg-amber-300 hover:bg-amber-200 text-zinc-950 px-6 py-4 rounded-2xl font-semibold text-sm">
+                        class="w-full bg-[#C9A96E] hover:bg-[#b38c55] text-zinc-950 px-6 py-4 rounded-2xl font-semibold text-sm">
                     START YOUR STORY
                 </button>
             </div>
@@ -209,7 +174,7 @@
         <div class="w-full max-w-5xl mx-auto px-5 md:px-8 text-center relative z-10 pb-16">
             
             <h1 class="heading-font text-6xl sm:text-7xl md:text-7xl lg:text-8xl font-bold leading-none mb-6 text-white">
-                Where Memories Find Their <span class="text-amber-300">Forever</span>
+                Where Memories Find Their <span class="text-[#C9A96E]">Forever</span>
             </h1>
             
             <p class="text-xl md:text-2xl text-zinc-300 max-w-2xl mx-auto mb-10">
@@ -218,12 +183,12 @@
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
-                        class="bg-amber-300 text-zinc-950 hover:bg-amber-200 px-10 py-6 rounded-2xl text-lg font-semibold flex items-center justify-center gap-3 transition-all">
+                        class="bg-[#C9A96E] hover:bg-[#b38c55] text-zinc-950 px-10 py-6 rounded-2xl text-lg font-semibold flex items-center justify-center gap-3 transition-all">
                     <span>CREATE YOUR VIDEO</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
                 <button onclick="document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })"
-                        class="border border-amber-300/70 hover:border-amber-300 px-10 py-6 rounded-2xl text-lg font-medium transition-all">
+                        class="border border-[#C9A96E] hover:bg-[#C9A96E] hover:text-zinc-950 px-10 py-6 rounded-2xl text-lg font-medium transition-all">
                     VIEW EXAMPLES
                 </button>
             </div>
@@ -231,7 +196,7 @@
         </div>
 
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
-            <i class="fa-solid fa-chevron-down text-4xl text-amber-300/70"></i>
+            <i class="fa-solid fa-chevron-down text-4xl text-[#C9A96E]"></i>
         </div>
     </header>
 
@@ -294,22 +259,22 @@
             </div>
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-amber-300/10 text-amber-300 rounded-2xl flex items-center justify-center text-3xl mb-6">1</div>
+                    <div class="w-16 h-16 mx-auto bg-[#C9A96E]/10 text-[#C9A96E] rounded-2xl flex items-center justify-center text-3xl mb-6">1</div>
                     <h4 class="font-semibold text-xl mb-2">Share Your Memories</h4>
                     <p class="text-zinc-400">Send photos, videos, and details about your loved one or event.</p>
                 </div>
                 <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-amber-300/10 text-amber-300 rounded-2xl flex items-center justify-center text-3xl mb-6">2</div>
+                    <div class="w-16 h-16 mx-auto bg-[#C9A96E]/10 text-[#C9A96E] rounded-2xl flex items-center justify-center text-3xl mb-6">2</div>
                     <h4 class="font-semibold text-xl mb-2">We Craft the Arc</h4>
                     <p class="text-zinc-400">Our editors weave everything into a cinematic masterpiece.</p>
                 </div>
                 <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-amber-300/10 text-amber-300 rounded-2xl flex items-center justify-center text-3xl mb-6">3</div>
+                    <div class="w-16 h-16 mx-auto bg-[#C9A96E]/10 text-[#C9A96E] rounded-2xl flex items-center justify-center text-3xl mb-6">3</div>
                     <h4 class="font-semibold text-xl mb-2">Review & Revise</h4>
                     <p class="text-zinc-400">You get to watch and request any changes.</p>
                 </div>
                 <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-amber-300/10 text-amber-300 rounded-2xl flex items-center justify-center text-3xl mb-6">4</div>
+                    <div class="w-16 h-16 mx-auto bg-[#C9A96E]/10 text-[#C9A96E] rounded-2xl flex items-center justify-center text-3xl mb-6">4</div>
                     <h4 class="font-semibold text-xl mb-2">Receive Forever</h4>
                     <p class="text-zinc-400">Download in stunning 4K with multiple formats.</p>
                 </div>
@@ -327,7 +292,7 @@
                         <div class="w-12 h-12 bg-zinc-700 rounded-full"></div>
                         <div>
                             <div class="font-medium">David Thompson</div>
-                            <div class="text-amber-300 text-sm">Proud Father, CT</div>
+                            <div class="text-[#C9A96E] text-sm">Proud Father, CT</div>
                         </div>
                     </div>
                 </div>
@@ -338,7 +303,7 @@
                         <div class="w-12 h-12 bg-zinc-700 rounded-full"></div>
                         <div>
                             <div class="font-medium">Michael & Francesca Rivera</div>
-                            <div class="text-amber-300 text-sm">25th Anniversary, CT</div>
+                            <div class="text-[#C9A96E] text-sm">25th Anniversary, CT</div>
                         </div>
                     </div>
                 </div>
@@ -349,7 +314,7 @@
                         <div class="w-12 h-12 bg-zinc-700 rounded-full"></div>
                         <div>
                             <div class="font-medium">Coach Elena Vargas</div>
-                            <div class="text-amber-300 text-sm">PHS Tennis, CT</div>
+                            <div class="text-[#C9A96E] text-sm">PHS Tennis, CT</div>
                         </div>
                     </div>
                 </div>
@@ -375,12 +340,12 @@
                         <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> 1 round of revisions</li>
                     </ul>
                     <button onclick="selectPackage('Essential')"
-                            class="w-full py-4 border border-amber-300 rounded-2xl hover:bg-zinc-700 transition-colors mt-auto">Select Essential</button>
+                            class="w-full py-4 border border-[#C9A96E] rounded-2xl hover:bg-[#C9A96E] hover:text-zinc-950 transition-colors mt-auto">Select Essential</button>
                 </div>
               
                 <!-- Signature - Most Popular -->
-                <div class="bg-gradient-to-b from-amber-300 to-amber-400 text-zinc-950 rounded-3xl p-10 md:scale-105 shadow-2xl flex flex-col">
-                    <div class="uppercase text-xs tracking-widest font-semibold mb-1 text-[#C9A96E]">Most Popular</div>
+                <div class="bg-gradient-to-b from-[#C9A96E] to-[#b38c55] text-zinc-950 rounded-3xl p-10 md:scale-105 shadow-2xl flex flex-col">
+                    <div class="uppercase text-xs tracking-widest font-semibold mb-1">Most Popular</div>
                     <h3 class="text-3xl font-bold mb-2">Signature</h3>
                     <div class="text-7xl font-light my-6">$899</div>
                     <ul class="space-y-4 text-left mb-10 flex-grow">
@@ -404,7 +369,7 @@
                         <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> 3 rounds of revisions</li>
                     </ul>
                     <button onclick="selectPackage('Legacy')"
-                            class="w-full py-4 border border-amber-300 rounded-2xl hover:bg-zinc-700 transition-colors mt-auto">Select Legacy</button>
+                            class="w-full py-4 border border-[#C9A96E] rounded-2xl hover:bg-[#C9A96E] hover:text-zinc-950 transition-colors mt-auto">Select Legacy</button>
                 </div>
             </div>
         </div>
@@ -423,7 +388,7 @@
                 <div>
                     <label class="block text-sm text-[#C9A96E] mb-2">Interested Package</label>
                     <select name="package" id="package-select" required
-                            class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-300 text-white">
+                            class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-[#C9A96E] text-white">
                         <option value="">Select a Package</option>
                         <option value="Essential">Essential - $399</option>
                         <option value="Signature">Signature - $899 (Most Popular)</option>
@@ -432,20 +397,19 @@
                 </div>
 
                 <input type="text" name="name" placeholder="Your Name" required 
-                       class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-300">
+                       class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-[#C9A96E]">
                 
                 <input type="email" name="email" placeholder="Email Address" required 
-                       class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-300">
+                       class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-[#C9A96E]">
                 
                 <textarea name="message" placeholder="Tell us about the special moment..." rows="6" required 
-                          class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-300"></textarea>
+                          class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-[#C9A96E]"></textarea>
                 
                 <button type="submit" id="submit-btn"
-                        class="w-full bg-amber-300 hover:bg-amber-200 text-zinc-950 py-6 rounded-2xl font-semibold text-lg transition-all">
+                        class="w-full bg-[#C9A96E] hover:bg-[#b38c55] text-zinc-950 py-6 rounded-2xl font-semibold text-lg transition-all">
                     SEND MESSAGE
                 </button>
                 
-                <!-- Success Message -->
                 <div id="form-success" class="hidden text-center p-4 bg-emerald-900/30 border border-emerald-600 rounded-2xl">
                     <p class="text-emerald-400 font-medium">Thank you! Your message has been sent successfully.</p>
                     <p class="text-emerald-300 text-sm mt-1">We'll get back to you within 24 hours.</p>
@@ -471,55 +435,7 @@
         </div>
     </div>
 
-    <!-- Schema.org Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Noah's Arc Media",
-      "url": "https://www.noahsarcmedia.com",
-      "logo": "Screenshot 2026-07-03 090254.png",
-      "description": "Premium cinematic tribute videos for graduations, anniversaries, sports seasons, and memorials.",
-      "serviceType": "Custom Tribute Video Production",
-      "areaServed": ["Connecticut", "South Carolina"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Tribute Video Packages",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Essential Tribute Video",
-              "description": "Up to 6-minute cinematic tribute video"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Signature Tribute Video",
-              "description": "Up to 10-minute premium tribute video"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Legacy Tribute Video",
-              "description": "Up to 15-minute premium tribute video with extended features"
-            }
-          }
-        ]
-      }
-    }
-    </script>
-
     <script>
-        function toggleDarkMode() {
-            alert("Dark mode is already active on this premium cinematic website ✨");
-        }
-
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const btn = document.getElementById('mobile-menu-btn');
@@ -537,34 +453,6 @@
         }
 
         document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
-
-        function smoothScrollTo(targetId) {
-            const target = document.getElementById(targetId);
-            if (target) {
-                const navHeight = 80;
-                const targetPosition = target.getBoundingClientRect().top + window.scrollY;
-                
-                window.scrollTo({
-                    top: targetPosition - navHeight,
-                    behavior: 'smooth'
-                });
-            }
-            
-            const menu = document.getElementById('mobile-menu');
-            if (menu && !menu.classList.contains('hidden')) {
-                toggleMobileMenu();
-            }
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href').substring(1);
-                if (targetId) {
-                    e.preventDefault();
-                    smoothScrollTo(targetId);
-                }
-            });
-        });
 
         function selectPackage(packageName) {
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
@@ -592,7 +480,7 @@
                         <img src="${item.thumb}" class="w-full h-64 object-cover transition-transform group-hover:scale-105" alt="${item.title}">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                             <div>
-                                <p class="text-amber-300 text-xs">${item.category}</p>
+                                <p class="text-[#C9A96E] text-xs">${item.category}</p>
                                 <p class="font-medium text-lg">${item.title}</p>
                             </div>
                         </div>
@@ -672,7 +560,6 @@
 
         window.onload = function() {
             renderPortfolio();
-            console.log('%cNoah\'s Arc Media - Premium Tribute Videos ready ✨', 'color:#d4af37; font-family:monospace');
         };
     </script>
 </body>
