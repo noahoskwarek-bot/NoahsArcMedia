@@ -249,7 +249,7 @@
         </div>
     </section>
 
-    <!-- GALLERY / PORTFOLIO - Updated with your YouTube links -->
+    <!-- GALLERY SECTION - Fixed YouTube Links -->
     <section id="portfolio" class="py-20 md:py-24 bg-black pt-20 md:pt-0">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
             <div class="flex justify-between items-end mb-10 pt-6 md:pt-0">
@@ -446,7 +446,7 @@
             <div class="flex justify-end p-4">
                 <button onclick="closeModal()" class="text-3xl text-zinc-400 hover:text-white">&times;</button>
             </div>
-            <div id="modal-video-container" class="aspect-video bg-black"></div>
+            <div id="modal-video-container" class="aspect-video bg-black p-2"></div>
         </div>
     </div>
 
@@ -480,7 +480,7 @@
             }, 900);
         }
 
-        // Updated GALLERY section with your 3 YouTube links
+        // GALLERY items with your YouTube links
         const portfolioItems = [
             { 
                 title: "Lucas Graduation Tribute", 
@@ -523,26 +523,39 @@
             `).join('');
         }
 
+        // Improved playVideo function
         function playVideo(videoUrl, title) {
             const modal = document.getElementById('video-modal');
             const container = document.getElementById('modal-video-container');
-            container.innerHTML = `
-                <iframe width="100%" height="100%"
-                        src="${videoUrl}"
-                        title="${title}"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-            `;
+            
+            // Clear previous iframe
+            container.innerHTML = '';
+            
+            // Create new iframe
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('width', '100%');
+            iframe.setAttribute('height', '100%');
+            iframe.setAttribute('src', videoUrl);
+            iframe.setAttribute('title', title);
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', 'true');
+            
+            container.appendChild(iframe);
+            
+            // Show modal
             modal.classList.remove('hidden');
             modal.classList.add('flex');
         }
 
         function closeModal() {
             const modal = document.getElementById('video-modal');
+            const container = document.getElementById('modal-video-container');
+            
             modal.classList.add('hidden');
             modal.classList.remove('flex');
-            const container = document.getElementById('modal-video-container');
+            
+            // Clear iframe to stop video
             container.innerHTML = '';
         }
 
