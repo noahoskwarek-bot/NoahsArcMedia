@@ -347,7 +347,7 @@
                         <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Up to 50 photos/videos</li>
                         <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> 1 round of revisions</li>
                     </ul>
-                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+                    <button onclick="selectPackage('Essential')"
                             class="w-full py-4 border border-amber-300 rounded-2xl hover:bg-zinc-700 transition-colors mt-auto">Select Essential</button>
                 </div>
               
@@ -362,7 +362,7 @@
                         <li class="flex items-center gap-3"><i class="fa-solid fa-check"></i> End of video credits</li>
                         <li class="flex items-center gap-3"><i class="fa-solid fa-check"></i> 2 rounds of revisions</li>
                     </ul>
-                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+                    <button onclick="selectPackage('Signature')"
                             class="w-full bg-zinc-950 text-white py-5 rounded-2xl font-semibold mt-auto">Get Started</button>
                 </div>
               
@@ -376,7 +376,7 @@
                         <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> End of video credits</li>
                         <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> 3 rounds of revisions</li>
                     </ul>
-                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+                    <button onclick="selectPackage('Legacy')"
                             class="w-full py-4 border border-amber-300 rounded-2xl hover:bg-zinc-700 transition-colors mt-auto">Select Legacy</button>
                 </div>
             </div>
@@ -391,8 +391,20 @@
                 <p class="text-xl text-zinc-400 mt-4">We'll reply within 24 hours</p>
             </div>
            
-            <!-- Form -->
             <form id="contact-form" action="https://formspree.io/f/xeebvqgr" method="POST" class="space-y-6">
+                
+                <!-- Package Dropdown -->
+                <div>
+                    <label class="block text-sm text-zinc-400 mb-2">Interested Package</label>
+                    <select name="package" id="package-select" required
+                            class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-300 text-white">
+                        <option value="">Select a Package</option>
+                        <option value="Essential">Essential - $399</option>
+                        <option value="Signature">Signature - $899 (Most Popular)</option>
+                        <option value="Legacy">Legacy - $1,499</option>
+                    </select>
+                </div>
+
                 <input type="text" name="name" placeholder="Your Name" required 
                        class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-300">
                 
@@ -467,11 +479,6 @@
                     behavior: 'smooth'
                 });
             }
-            
-            const menu = document.getElementById('mobile-menu');
-            if (menu && !menu.classList.contains('hidden')) {
-                toggleMobileMenu();
-            }
         }
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -483,6 +490,20 @@
                 }
             });
         });
+
+        // Function to select package from pricing buttons
+        function selectPackage(packageName) {
+            // Scroll to contact section
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            
+            // Wait for scroll to finish then select the package
+            setTimeout(() => {
+                const select = document.getElementById('package-select');
+                if (select) {
+                    select.value = packageName;
+                }
+            }, 900);
+        }
 
         // Portfolio
         const portfolioItems = [
@@ -535,7 +556,7 @@
             container.innerHTML = '';
         }
 
-        // Contact Form with AJAX + Clear Form
+        // Contact Form with AJAX
         const contactForm = document.getElementById('contact-form');
         const submitBtn = document.getElementById('submit-btn');
         const successMessage = document.getElementById('form-success');
@@ -559,7 +580,7 @@
                     });
                     
                     if (response.ok) {
-                        contactForm.reset(); // Clear form fields
+                        contactForm.reset();
                         successMessage.classList.remove('hidden');
                         submitBtn.textContent = 'MESSAGE SENT';
                         
@@ -569,7 +590,7 @@
                             submitBtn.textContent = 'SEND MESSAGE';
                         }, 5000);
                     } else {
-                        throw new Error('Submission failed');
+                        throw new Error('Form submission failed');
                     }
                 } catch (error) {
                     alert('Sorry, there was a problem sending your message. Please try again.');
