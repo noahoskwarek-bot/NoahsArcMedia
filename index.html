@@ -330,13 +330,12 @@
         </div>
     </section>
 
-    <!-- PRICING - Updated Structure -->
+    <!-- PRICING -->
     <section id="pricing" class="py-20 md:py-24 bg-zinc-900">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8 text-center">
             <h2 class="heading-font text-4xl md:text-5xl font-semibold mb-4">Simple, Transparent Pricing</h2>
             <p class="text-zinc-400 max-w-md mx-auto mb-12">Choose the experience that fits your story. All packages include cinematic editing and emotional storytelling.</p>
             
-            <!-- New Pricing Grid -->
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-8">
                
                 <!-- Essential -->
@@ -392,8 +391,8 @@
                 <p class="text-xl text-zinc-400 mt-4">We'll reply within 24 hours</p>
             </div>
            
-            <!-- Formspree Form -->
-            <form action="https://formspree.io/f/xeebvqgr" method="POST" class="space-y-6">
+            <!-- Form -->
+            <form id="contact-form" action="https://formspree.io/f/xeebvqgr" method="POST" class="space-y-6">
                 <input type="text" name="name" placeholder="Your Name" required 
                        class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-300">
                 
@@ -403,10 +402,16 @@
                 <textarea name="message" placeholder="Tell us about the special moment..." rows="6" required 
                           class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-300"></textarea>
                 
-                <button type="submit" 
+                <button type="submit" id="submit-btn"
                         class="w-full bg-amber-300 hover:bg-amber-200 text-zinc-950 py-6 rounded-2xl font-semibold text-lg transition-all">
                     SEND MESSAGE
                 </button>
+                
+                <!-- Success Message -->
+                <div id="form-success" class="hidden text-center p-4 bg-emerald-900/30 border border-emerald-600 rounded-2xl">
+                    <p class="text-emerald-400 font-medium">Thank you! Your message has been sent successfully.</p>
+                    <p class="text-emerald-300 text-sm mt-1">We'll get back to you within 24 hours.</p>
+                </div>
             </form>
         </div>
     </section>
@@ -479,6 +484,7 @@
             });
         });
 
+        // Portfolio
         const portfolioItems = [
             { title: "Lucas Graduation Tribute", category: "Graduation", thumb: "https://picsum.photos/id/1015/600/400", video: "https://www.youtube.com/embed/dQw4w9wgxcq" },
             { title: "PHS Tennis Season 2026", category: "Sports", thumb: "https://picsum.photos/id/201/600/400", video: "https://www.youtube.com/embed/dQw4w9wgxcq" },
@@ -529,6 +535,51 @@
             container.innerHTML = '';
         }
 
+        // Contact Form with AJAX + Clear Form
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const successMessage = document.getElementById('form-success');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'SENDING...';
+                
+                const formData = new FormData(contactForm);
+                
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        contactForm.reset(); // Clear form fields
+                        successMessage.classList.remove('hidden');
+                        submitBtn.textContent = 'MESSAGE SENT';
+                        
+                        setTimeout(() => {
+                            successMessage.classList.add('hidden');
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'SEND MESSAGE';
+                        }, 5000);
+                    } else {
+                        throw new Error('Submission failed');
+                    }
+                } catch (error) {
+                    alert('Sorry, there was a problem sending your message. Please try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'SEND MESSAGE';
+                }
+            });
+        }
+
+        // Initialize
         window.onload = function() {
             renderPortfolio();
             console.log('%cNoah\'s Arc Media - Premium Tribute Videos ready ✨', 'color:#d4af37; font-family:monospace');
