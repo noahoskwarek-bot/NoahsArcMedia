@@ -132,13 +132,15 @@
     <!-- NAV -->
     <nav class="bg-black/90 backdrop-blur-lg fixed w-full z-50 border-b border-amber-900">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-3">
+            
+            <!-- Logo -->
+            <div class="flex items-center">
                 <a href="http://www.noahsarcmedia.com/" class="hover:opacity-80 transition-opacity">
-                    <span class="text-2xl font-bold heading-font tracking-wider text-amber-300">NOAH'S ARC</span>
-                    <span class="block text-[10px] text-amber-400 -mt-1 tracking-[3px]">MEDIA</span>
+                    <img src="logo.png" alt="Noah's Arc Media Logo" class="h-11 w-auto">
                 </a>
             </div>
            
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="#services" class="nav-link text-zinc-300 hover:text-amber-300">Services</a>
                 <a href="#portfolio" class="nav-link text-zinc-300 hover:text-amber-300">Portfolio</a>
@@ -163,7 +165,7 @@
         </div>
     </nav>
 
-    <!-- MOBILE MENU (Closes on link click) -->
+    <!-- MOBILE MENU -->
     <div id="mobile-menu" class="hidden md:hidden fixed left-0 right-0 top-[76px] bg-zinc-950 border-b border-amber-900 z-40 w-full">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col gap-2 text-lg">
             <a href="#services" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-amber-300 py-3 px-2">Services</a>
@@ -181,7 +183,7 @@
         </div>
     </div>
 
-    <!-- HERO - Fixed mobile overlap + arrow position -->
+    <!-- HERO -->
     <header class="hero-bg min-h-[85vh] md:min-h-[82vh] flex items-center justify-center relative film-grain pt-20 md:pt-24 lg:pt-28">
         <div class="w-full max-w-5xl mx-auto px-5 md:px-8 text-center relative z-10 pb-16">
             
@@ -207,7 +209,7 @@
 
         </div>
 
-        <!-- Bouncing Arrow - Now below buttons -->
+        <!-- Bouncing Arrow -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
             <i class="fa-solid fa-chevron-down text-4xl text-amber-300/70"></i>
         </div>
@@ -501,7 +503,6 @@
             });
         });
 
-        // Auto-select package from pricing buttons
         function selectPackage(packageName) {
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
             
@@ -513,7 +514,6 @@
             }, 900);
         }
 
-        // Portfolio
         const portfolioItems = [
             { title: "Lucas Graduation Tribute", category: "Graduation", thumb: "https://picsum.photos/id/1015/600/400", video: "https://www.youtube.com/embed/dQw4w9wgxcq" },
             { title: "PHS Tennis Season 2026", category: "Sports", thumb: "https://picsum.photos/id/201/600/400", video: "https://www.youtube.com/embed/dQw4w9wgxcq" },
@@ -564,7 +564,6 @@
             container.innerHTML = '';
         }
 
-        // Contact Form with AJAX + Reset
         const contactForm = document.getElementById('contact-form');
         const submitBtn = document.getElementById('submit-btn');
         const successMessage = document.getElementById('form-success');
@@ -608,7 +607,6 @@
             });
         }
 
-        // Initialize
         window.onload = function() {
             renderPortfolio();
             console.log('%cNoah\'s Arc Media - Premium Tribute Videos ready ✨', 'color:#d4af37; font-family:monospace');
