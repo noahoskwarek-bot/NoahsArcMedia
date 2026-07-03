@@ -491,12 +491,10 @@
             });
         });
 
-        // Function to select package from pricing buttons
+        // Auto-select package from pricing buttons
         function selectPackage(packageName) {
-            // Scroll to contact section
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
             
-            // Wait for scroll to finish then select the package
             setTimeout(() => {
                 const select = document.getElementById('package-select');
                 if (select) {
@@ -556,7 +554,7 @@
             container.innerHTML = '';
         }
 
-        // Contact Form with AJAX
+        // Contact Form AJAX + Reset
         const contactForm = document.getElementById('contact-form');
         const submitBtn = document.getElementById('submit-btn');
         const successMessage = document.getElementById('form-success');
