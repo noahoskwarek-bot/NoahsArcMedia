@@ -57,8 +57,8 @@
         }
        
         .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 25px 50px -12px rgb(212 175 55 / 0.25);
         }
         
         .nav-link {
@@ -126,18 +126,6 @@
             section {
                 scroll-margin-top: 150px;
             }
-        }
-
-        .play-overlay {
-            transition: all 0.3s ease;
-        }
-        
-        .gallery-card:hover .play-overlay {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-        
-        .gallery-card:hover .play-icon {
-            transform: scale(1.2);
         }
     </style>
 </head>
@@ -261,7 +249,7 @@
         </div>
     </section>
 
-    <!-- GALLERY SECTION - Clickable Thumbnails -->
+    <!-- GALLERY SECTION -->
     <section id="portfolio" class="py-20 md:py-24 bg-black pt-20 md:pt-0">
         <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
             <div class="flex justify-between items-end mb-10 pt-6 md:pt-0">
@@ -492,7 +480,6 @@
             }, 900);
         }
 
-        // GALLERY items with custom images
         const portfolioItems = [
             { 
                 title: "Lucas Graduation Tribute", 
@@ -518,20 +505,13 @@
             const container = document.getElementById('portfolio-grid');
             container.innerHTML = portfolioItems.map(item => `
                 <div onclick="playVideo('${item.video}', '${item.title}')"
-                     class="gallery-card group cursor-pointer bg-zinc-800 rounded-3xl overflow-hidden border border-zinc-700">
-                    
-                    <!-- Thumbnail with Play Overlay -->
+                     class="group cursor-pointer bg-zinc-800 rounded-3xl overflow-hidden border border-zinc-700">
                     <div class="relative">
-                        <img src="${item.thumb}" class="w-full h-64 object-cover" alt="${item.title}">
-                        
-                        <!-- Dark Overlay + Play Button -->
-                        <div class="play-overlay absolute inset-0 flex items-center justify-center bg-black/40">
-                            <div class="play-icon w-16 h-16 bg-[#C9A96E] rounded-full flex items-center justify-center shadow-lg">
-                                <i class="fa-solid fa-play text-zinc-950 text-2xl ml-1"></i>
-                            </div>
+                        <img src="${item.thumb}" class="w-full h-64 object-cover transition-transform group-hover:scale-105" alt="${item.title}">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/30">
+                            <i class="fa-solid fa-play text-5xl text-white/90 group-hover:scale-110 transition-transform"></i>
                         </div>
                     </div>
-                    
                     <div class="p-6">
                         <p class="text-[#C9A96E] text-xs font-medium tracking-wider">${item.category}</p>
                         <p class="font-semibold text-lg mt-1">${item.title}</p>
