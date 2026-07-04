@@ -21,12 +21,13 @@
     <meta name="twitter:image" content="https://noahsarcmedia.com/Screenshot 2026-07-03 090254.png">
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N27JKH5SK3"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LSKQLFRK2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-N27JKH5SK3');
+      gtag('config', 'G-3LSKQLFRK2');
     </script>
 
     <title>Noah's Arc Media | Cinematic Tribute Videos for Life's Special Moments</title>
@@ -34,7 +35,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Rest of your CSS styles remain the same -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');
        
@@ -190,8 +190,284 @@
         </div>
     </nav>
 
-    <!-- Rest of your website content remains exactly the same -->
-    <!-- (NAV, HERO, SERVICES, GALLERY, HOW IT WORKS, TESTIMONIALS, PRICING, CONTACT FORM, FOOTER, etc.) -->
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="hidden md:hidden fixed left-0 right-0 top-[76px] bg-zinc-950 border-b border-amber-900 z-40 w-full">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col gap-2 text-lg">
+            <a href="#services" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-[#C9A96E] py-3 px-2">Services</a>
+            <a href="#portfolio" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-[#C9A96E] py-3 px-2">Portfolio</a>
+            <a href="#how" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-[#C9A96E] py-3 px-2">How it Works</a>
+            <a href="#pricing" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-[#C9A96E] py-3 px-2">Pricing</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="mobile-nav-link text-zinc-300 hover:text-[#C9A96E] py-3 px-2">Contact</a>
+            
+            <div class="pt-4 mt-2 border-t border-zinc-800">
+                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); toggleMobileMenu();"
+                        class="w-full bg-[#C9A96E] hover:bg-[#b38c55] text-zinc-950 px-6 py-4 rounded-2xl font-semibold text-sm">
+                    START YOUR STORY
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero-bg min-h-[85vh] md:min-h-[82vh] flex items-center justify-center relative film-grain pt-20 md:pt-24 lg:pt-28">
+        <div class="w-full max-w-5xl mx-auto px-5 md:px-8 text-center relative z-10 pt-8 md:pt-0 pb-16">
+            
+            <h1 class="heading-font text-6xl sm:text-7xl md:text-7xl lg:text-8xl font-bold leading-none mb-6 text-white">
+                Where Memories Find Their <span class="text-[#C9A96E]">Forever</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-zinc-300 max-w-2xl mx-auto mb-10">
+                Cinematic tribute videos for life's most important moments.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+                        class="bg-[#C9A96E] hover:bg-[#b38c55] text-zinc-950 px-10 py-6 rounded-2xl text-lg font-semibold flex items-center justify-center gap-3 transition-all">
+                    <span>CREATE YOUR VIDEO</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <button onclick="document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })"
+                        class="border border-[#C9A96E] hover:bg-[#C9A96E] hover:text-zinc-950 px-10 py-6 rounded-2xl text-lg font-medium transition-all">
+                    VIEW EXAMPLES
+                </button>
+            </div>
+
+        </div>
+
+        <div onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })" 
+             class="absolute bottom-8 left-0 right-0 flex justify-center z-10 cursor-pointer">
+            <div class="animate-bounce">
+                <i class="fa-solid fa-chevron-down text-4xl text-[#C9A96E]"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-20 md:py-24 bg-zinc-900 pt-20 md:pt-0">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
+            <div class="text-center mb-14 pt-6 md:pt-0">
+                <span class="text-[#C9A96E] text-sm tracking-[3px]">WHAT WE CREATE</span>
+                <h2 class="heading-font text-4xl md:text-5xl font-semibold mt-3">Signature Tribute Experiences</h2>
+            </div>
+           
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-zinc-800/70 border border-zinc-700 rounded-3xl overflow-hidden group">
+                    <div class="h-56 bg-[url('https://images.unsplash.com/photo-1523240795612-9a054b0db644')] bg-cover bg-center"></div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-2">Graduation Chronicles</h3>
+                        <p class="text-zinc-400">From cap & gown to future dreams — a cinematic story of achievement.</p>
+                    </div>
+                </div>
+               
+                <div class="card-hover bg-zinc-800/70 border border-zinc-700 rounded-3xl overflow-hidden group">
+                    <div class="h-56 bg-[url('https://images.unsplash.com/photo-1546519638-68e109498ffc')] bg-cover bg-center"></div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-2">Team Victory Reels</h3>
+                        <p class="text-zinc-400">Epic season highlights for school sports teams and coaches.</p>
+                    </div>
+                </div>
+               
+                <div class="card-hover bg-zinc-800/70 border border-zinc-700 rounded-3xl overflow-hidden group">
+                    <div class="h-56 bg-[url('https://images.unsplash.com/photo-1511895426328-dc8714191300')] bg-cover bg-center"></div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-2">Life Chapter Films</h3>
+                        <p class="text-zinc-400">Baby showers, weddings, anniversaries & memorials.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="portfolio" class="py-20 md:py-24 bg-black pt-20 md:pt-0">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
+            <div class="flex justify-between items-end mb-10 pt-6 md:pt-0">
+                <div>
+                    <span class="text-[#C9A96E] tracking-widest">GALLERY</span>
+                    <h2 class="heading-font text-4xl md:text-5xl font-semibold">Real Stories, Beautifully Told</h2>
+                </div>
+            </div>
+           
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="py-20 md:py-24 bg-zinc-900 pt-20 md:pt-0">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-8">
+            <div class="text-center mb-14 pt-6 md:pt-0">
+                <h2 class="heading-font text-4xl md:text-5xl font-semibold">How Your Story Comes to Life</h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#C9A96E]/10 text-[#C9A96E] rounded-2xl flex items-center justify-center text-3xl mb-6">1</div>
+                    <h4 class="font-semibold text-xl mb-2">Share Your Memories</h4>
+                    <p class="text-zinc-400">Send photos, videos, and details about your loved one or event.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#C9A96E]/10 text-[#C9A96E] rounded-2xl flex items-center justify-center text-3xl mb-6">2</div>
+                    <h4 class="font-semibold text-xl mb-2">We Craft the Arc</h4>
+                    <p class="text-zinc-400">Our editors weave everything into a cinematic masterpiece.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#C9A96E]/10 text-[#C9A96E] rounded-2xl flex items-center justify-center text-3xl mb-6">3</div>
+                    <h4 class="font-semibold text-xl mb-2">Review & Revise</h4>
+                    <p class="text-zinc-400">You get to watch and request any changes.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#C9A96E]/10 text-[#C9A96E] rounded-2xl flex items-center justify-center text-3xl mb-6">4</div>
+                    <h4 class="font-semibold text-xl mb-2">Receive Forever</h4>
+                    <p class="text-zinc-400">Download in stunning 4K with multiple formats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-20 md:py-24 bg-black pt-20 md:pt-0">
+        <div class="w-full max-w-6xl mx-auto px-5 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6 md:pt-0">
+                <div class="bg-zinc-900 p-8 rounded-3xl">
+                    <p class="italic text-lg">"The video they made for Lucas's graduation brought our whole family to tears. It perfectly captured his high school journey and all the precious moments."</p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-zinc-700 rounded-full"></div>
+                        <div>
+                            <div class="font-medium">Sal Falleta</div>
+                            <div class="text-[#C9A96E] text-sm">White Plains, NY</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-zinc-900 p-8 rounded-3xl">
+                    <p class="italic text-lg">"Our 50th anniversary tribute video was absolutely stunning. It brought back so many memories and even made my wife cry happy tears."</p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-zinc-700 rounded-full"></div>
+                        <div>
+                            <div class="font-medium">Stan Oskwarek</div>
+                            <div class="text-[#C9A96E] text-sm">Kent, CT</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-zinc-900 p-8 rounded-3xl">
+                    <p class="italic text-lg">"The team video for our high school tennis team was beyond what we expected. The cinematic quality made the whole team feel proud."</p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-zinc-700 rounded-full"></div>
+                        <div>
+                            <div class="font-medium">Coach Richard</div>
+                            <div class="text-[#C9A96E] text-sm">PHS Tennis, CT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="py-20 md:py-24 bg-zinc-900 pt-20 md:pt-0">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-8 text-center">
+            <div class="pt-6 md:pt-0">
+                <h2 class="heading-font text-4xl md:text-5xl font-semibold mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-zinc-400 max-w-md mx-auto mb-12">Choose the experience that fits your story. All packages include cinematic editing and emotional storytelling.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-8">
+               
+                <!-- Essential -->
+                <div class="bg-zinc-800 border border-zinc-700 rounded-3xl p-10 flex flex-col">
+                    <h3 class="text-2xl font-semibold mb-2">Essential</h3>
+                    <div class="text-6xl font-light my-6">$345</div>
+                    <ul class="space-y-4 text-left mb-10 flex-grow">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Up to 6 min video</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Up to 50 photos/videos</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> 1 round of revisions</li>
+                    </ul>
+                    <button onclick="selectPackage('Essential')"
+                            class="w-full py-4 border border-[#C9A96E] rounded-2xl hover:bg-[#C9A96E] hover:text-zinc-950 transition-colors mt-auto">Select Essential</button>
+                </div>
+              
+                <!-- Signature -->
+                <div class="bg-gradient-to-b from-[#C9A96E] to-[#b38c55] text-zinc-950 rounded-3xl p-10 md:scale-105 shadow-2xl flex flex-col">
+                    <div class="uppercase text-xs tracking-widest font-semibold mb-1">Most Popular</div>
+                    <h3 class="text-3xl font-bold mb-2">Signature</h3>
+                    <div class="text-7xl font-light my-6">$595</div>
+                    <ul class="space-y-4 text-left mb-10 flex-grow">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check"></i> Up to 10 min video</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check"></i> Up to 75 photos/videos</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check"></i> End of video credits</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check"></i> 2 rounds of revisions</li>
+                    </ul>
+                    <button onclick="selectPackage('Signature')"
+                            class="w-full bg-zinc-950 text-white py-5 rounded-2xl font-semibold mt-auto">Get Started</button>
+                </div>
+               
+                <!-- Legacy -->
+                <div class="bg-zinc-800 border border-zinc-700 rounded-3xl p-10 flex flex-col">
+                    <h3 class="text-2xl font-semibold mb-2">Legacy</h3>
+                    <div class="text-6xl font-light my-6">$895</div>
+                    <ul class="space-y-4 text-left mb-10 flex-grow">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Up to 15 min video</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Unlimited photos & videos</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> End of video credits</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> 3 rounds of revisions</li>
+                    </ul>
+                    <button onclick="selectPackage('Legacy')"
+                            class="w-full py-4 border border-[#C9A96E] rounded-2xl hover:bg-[#C9A96E] hover:text-zinc-950 transition-colors mt-auto">Select Legacy</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section id="contact" class="py-20 md:py-24 bg-black pt-20 md:pt-0">
+        <div class="w-full max-w-2xl mx-auto px-5 md:px-8">
+            <div class="text-center mb-12 pt-6 md:pt-0">
+                <h2 class="heading-font text-4xl md:text-5xl font-semibold">Begin Your Tribute Today</h2>
+                <p class="text-xl text-zinc-400 mt-4">We'll reply within 24 hours</p>
+            </div>
+           
+            <form id="contact-form" action="https://formspree.io/f/xeebvqgr" method="POST" class="space-y-6">
+                
+                <div>
+                    <label class="block text-sm text-[#C9A96E] mb-2">Interested Package</label>
+                    <select name="package" id="package-select" required
+                            class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-[#C9A96E] text-white">
+                        <option value="">Select a Package</option>
+                        <option value="Essential">Essential - $345</option>
+                        <option value="Signature">Signature - $595 (Most Popular)</option>
+                        <option value="Legacy">Legacy - $895</option>
+                    </select>
+                </div>
+
+                <input type="text" name="name" placeholder="Your Name" required 
+                       class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-[#C9A96E]">
+                
+                <input type="email" name="email" placeholder="Email Address" required 
+                       class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-[#C9A96E]">
+                
+                <textarea name="message" placeholder="Tell us about the special moment..." rows="6" required 
+                          class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-[#C9A96E]"></textarea>
+                
+                <button type="submit" id="submit-btn"
+                        class="w-full bg-[#C9A96E] hover:bg-[#b38c55] text-zinc-950 py-6 rounded-2xl font-semibold text-lg transition-all">
+                    SEND MESSAGE
+                </button>
+                
+                <div id="form-success" class="hidden text-center p-4 bg-emerald-900/30 border border-emerald-600 rounded-2xl">
+                    <p class="text-emerald-400 font-medium">Thank you! Your message has been sent successfully.</p>
+                    <p class="text-emerald-300 text-sm mt-1">We'll get back to you within 24 hours.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-950 py-12 border-t border-zinc-800">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-8 text-center">
+            <p class="text-zinc-400">© 2026 Noah's Arc Media. Preserving life's most precious moments.</p>
+        </div>
+    </footer>
 
     <!-- VIDEO MODAL -->
     <div id="video-modal" class="hidden fixed inset-0 bg-black/95 z-[100] flex items-center justify-center">
@@ -204,7 +480,6 @@
     </div>
 
     <script>
-        // All your existing JavaScript remains the same
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const btn = document.getElementById('mobile-menu-btn');
