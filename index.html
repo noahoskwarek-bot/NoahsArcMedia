@@ -726,6 +726,18 @@
         }
         window.onload = function() {
             renderPortfolio();
+
+            // Pause other songs when one starts playing
+            const audios = document.querySelectorAll('audio');
+            audios.forEach(audio => {
+                audio.addEventListener('play', function() {
+                    audios.forEach(other => {
+                        if (other !== audio) {
+                            other.pause();
+                        }
+                    });
+                });
+            });
         };
     </script>
 </body>
