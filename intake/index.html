@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Website intake form for Noah's Arc Media clients.">
+    <title>Website intake | Noah's Arc Media</title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+        :root { --logo-gold: #C9A96E; }
+        html, body { max-width: 100%; }
+        body { font-family: Inter, system-ui, sans-serif; }
+        .heading-font { font-family: "Playfair Display", serif; }
+        .field {
+            width: 100%;
+            background: rgb(39 39 42);
+            border: 1px solid rgb(63 63 70);
+            border-radius: 1rem;
+            padding: 0.9rem 1.15rem;
+            font-size: 16px;
+            color: #fff;
+        }
+        .field::placeholder { color: rgb(161 161 170); }
+        .field:focus { outline: none; border-color: #C9A96E; }
+        textarea.field { min-height: 7rem; resize: vertical; }
+        .block-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+        .req { color: #C9A96E; }
+        .hint { font-size: 0.8rem; color: rgb(161 161 170); margin-top: 0.35rem; }
+        .choice {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            padding: 0.75rem 0.9rem;
+            border: 1px solid rgb(63 63 70);
+            background: rgb(39 39 42 / 0.7);
+            border-radius: 1rem;
+            cursor: pointer;
+        }
+        .choice:has(:checked) {
+            border-color: #C9A96E;
+            background: rgb(201 169 110 / 0.12);
+        }
+        .choice input { margin-top: 0.2rem; accent-color: #C9A96E; flex-shrink: 0; }
+        .hp {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+    <header class="bg-black/90 backdrop-blur-lg border-b border-amber-900">
+        <div class="max-w-3xl mx-auto px-5 md:px-8 py-5">
+            <a href="https://www.noahsarcmedia.com/" class="inline-flex items-center hover:opacity-80 transition-opacity">
+                <img src="/noahs-arc-media-share.png" alt="Noah's Arc Media" class="h-14 w-auto">
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-5 md:px-8 py-10 md:py-14">
+        <p class="text-[#C9A96E] text-sm tracking-[3px] uppercase">Noah's Arc Media</p>
+        <h1 class="heading-font text-4xl md:text-5xl font-semibold mt-3 leading-tight">Website intake</h1>
+        <p class="text-zinc-400 mt-5 text-lg leading-relaxed">
+            A short form so we have what we need to build your site. Skip anything you're not sure about.
+            Please don't upload files here — paste a shared folder link, or text or email photos to Noah.
+        </p>
+
+        <form id="intake-form" action="https://formspree.io/f/xeebvqgr" method="POST" class="mt-10 space-y-8" novalidate>
+            <input type="hidden" name="form_type" value="website_intake">
+            <input type="hidden" name="_subject" id="intake-subject" value="New website intake">
+            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+
+            <section class="bg-zinc-900/70 border border-zinc-800 rounded-3xl p-6 md:p-8 space-y-5" aria-labelledby="sec-basics">
+                <h2 id="sec-basics" class="heading-font text-2xl font-semibold">You and your business</h2>
+                <div>
+                    <label class="block-label" for="contact-name">Your name <span class="req">*</span></label>
+                    <input class="field" id="contact-name" name="Your name" type="text" autocomplete="name" required>
+                </div>
+                <div>
+                    <label class="block-label" for="email">Email <span class="req">*</span></label>
+                    <input class="field" id="email" name="Email" type="email" autocomplete="email" inputmode="email" required>
+                </div>
+                <div>
+                    <label class="block-label" for="phone">Phone</label>
+                    <input class="field" id="phone" name="Phone" type="tel" autocomplete="tel" inputmode="tel">
+                </div>
+                <div>
+                    <label class="block-label" for="business-name">Business name <span class="req">*</span></label>
+                    <input class="field" id="business-name" name="Business name" type="text" autocomplete="organization" required placeholder="For example, Maple &amp; Pine Studio">
+                </div>
+                <div>
+                    <label class="block-label" for="business-does">What does the business do? <span class="req">*</span></label>
+                    <textarea class="field" id="business-does" name="What the business does" required placeholder="A few sentences is plenty — what you make or offer, and who it's for."></textarea>
+                </div>
+                <div>
+                    <label class="block-label" for="owner-name">Owner or maker name, if it should appear on the site</label>
+                    <input class="field" id="owner-name" name="Owner or maker name" type="text">
+                </div>
+                <div>
+                    <label class="block-label" for="location">City or area you serve</label>
+                    <input class="field" id="location" name="City or area" type="text" placeholder="For example, your town and nearby area">
+                </div>
+                <div>
+                    <label class="block-label" for="tagline">Tagline, if you have one</label>
+                    <input class="field" id="tagline" name="Tagline" type="text" placeholder="A short line that could sit under your name">
+                </div>
+                <div>
+                    <label class="block-label" for="story">A little about you and the business, in your own words</label>
+                    <textarea class="field" id="story" name="About and story" placeholder="How you started, why you do this, and what you want people to feel."></textarea>
+                </div>
+            </section>
+
+            <section class="bg-zinc-900/70 border border-zinc-800 rounded-3xl p-6 md:p-8 space-y-5" aria-labelledby="sec-domain">
+                <h2 id="sec-domain" class="heading-font text-2xl font-semibold">Domain</h2>
+                <fieldset>
+                    <legend class="block-label mb-3">Do you already have a domain name?</legend>
+                    <div class="grid sm:grid-cols-3 gap-3">
+                        <label class="choice"><input type="radio" name="Has a domain" value="Yes"> Yes</label>
+                        <label class="choice"><input type="radio" name="Has a domain" value="No"> No</label>
+                        <label class="choice"><input type="radio" name="Has a domain" value="Not sure"> Not sure</label>
+                    </div>
+                </fieldset>
+                <div>
+                    <label class="block-label" for="domain">If yes, type the exact domain</label>
+                    <input class="field" id="domain" name="Domain" type="text" inputmode="url" placeholder="yourstudio.com" spellcheck="false" autocapitalize="none">
+                    <p class="hint">Please double-check the spelling, including .com or .net.</p>
+                </div>
+                <div>
+                    <label class="block-label" for="current-site">Do you already have a website?</label>
+                    <input class="field" id="current-site" name="Current website" type="url" inputmode="url" placeholder="https://">
+                </div>
+            </section>
+
+            <section class="bg-zinc-900/70 border border-zinc-800 rounded-3xl p-6 md:p-8 space-y-5" aria-labelledby="sec-brand">
+                <h2 id="sec-brand" class="heading-font text-2xl font-semibold">Brand and look</h2>
+                <fieldset>
+                    <legend class="block-label mb-3">Do you have a logo?</legend>
+                    <div class="space-y-3">
+                        <label class="choice"><input type="radio" name="Has a logo" value="Yes, I'll share a file"> Yes — I'll share a file or a link</label>
+                        <label class="choice"><input type="radio" name="Has a logo" value="Need a new logo"> Not yet — I'd like help with one</label>
+                        <label class="choice"><input type="radio" name="Has a logo" value="Use the business name as text"> Use the business name as text for now</label>
+                    </div>
+                </fieldset>
+                <div>
+                    <label class="block-label" for="colors">Colors, if you have them</label>
+                    <input class="field" id="colors" name="Colors" type="text" placeholder="Hex codes, or “warm ivory, black, and a little gold.”">
+                </div>
+                <div>
+                    <label class="block-label" for="vibe">A few words for the vibe</label>
+                    <input class="field" id="vibe" name="Brand vibe" type="text" placeholder="For example, warm, simple, a little bit fancy">
+                </div>
+                <div>
+                    <label class="block-label" for="inspiration">Any websites you like?</label>
+                    <input class="field" id="inspiration" name="Sites they like" type="text" placeholder="Links, and a few words on what you like about them">
+                </div>
+            </section>
+
+            <section class="bg-zinc-900/70 border border-zinc-800 rounded-3xl p-6 md:p-8 space-y-5" aria-labelledby="sec-pages">
+                <h2 id="sec-pages" class="heading-font text-2xl font-semibold">Pages you want</h2>
+                <fieldset>
+                    <legend class="block-label mb-3">Check any that apply. We can add more later.</legend>
+                    <div class="grid sm:grid-cols-2 gap-3">
+                        <label class="choice"><input type="checkbox" name="Pages wanted" value="Home"> Home</label>
+                        <label class="choice"><input type="checkbox" name="Pages wanted" value="Shop or products"> Shop or products</label>
+                        <label class="choice"><input type="checkbox" name="Pages wanted" value="About / Our story"> About / Our story</label>
+                        <label class="choice"><input type="checkbox" name="Pages wanted" value="Services"> Services</label>
+                        <label class="choice"><input type="checkbox" name="Pages wanted" value="Commissions or custom work"> Commissions or custom work</label>
+                        <label class="choice"><input type="checkbox" name="Pages wanted" value="Events or markets"> Events or markets</label>
+                        <label class="choice"><input type="checkbox" name="Pages wanted" value="Contact"> Contact</label>
+                        <label class="choice"><input type="checkbox" name="Pages wanted" value="Gallery"> Gallery</label>
+                    </div>
+                </fieldset>
+                <div>
+                    <label class="block-label" for="events-list">If you do markets or pop-ups, any upcoming dates to list?</label>
+                    <input class="field" id="events-list" name="Events and markets" type="text" placeholder="Name, place, and date if you have them">
+                </div>
+            </section>
+
+            <section class="bg-zinc-900/70 border border-zinc-800 rounded-3xl p-6 md:p-8 space-y-5" aria-labelledby="sec-products">
+                <h2 id="sec-products" class="heading-font text-2xl font-semibold">Products and selling online</h2>
+                <div>
+                    <label class="block-label" for="products">What you sell or offer</label>
+                    <textarea class="field" id="products" name="Products and services" placeholder="Name, price (or “price later”), and a short description for each. Example: Lavender soy candle — $18 — 8 oz, hand-poured."></textarea>
+                    <p class="hint">If prices aren't ready, say so. We can use an “ask about this” button instead of Buy.</p>
+                </div>
+                <fieldset>
+                    <legend class="block-label mb-3">Do you want people to buy on the site?</legend>
+                    <div class="grid sm:grid-cols-3 gap-3">
+                        <label class="choice"><input type="radio" name="Sell online" value="Yes"> Yes</label>
+                        <label class="choice"><input type="radio" name="Sell online" value="No"> No</label>
+                        <label class="choice"><input type="radio" name="Sell online" value="Not yet"> Not yet</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="block-label mb-3">Do you already have a Stripe account?</legend>
+                    <div class="grid sm:grid-cols-3 gap-3">
+                        <label class="choice"><input type="radio" name="Stripe account" value="Yes"> Yes</label>
+                        <label class="choice"><input type="radio" name="Stripe account" value="No"> No</label>
+                        <label class="choice"><input type="radio" name="Stripe account" value="Not sure"> Not sure</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="block-label mb-3">How should people receive their order?</legend>
+                    <div class="grid sm:grid-cols-2 gap-3">
+                        <label class="choice"><input type="checkbox" name="Fulfillment" value="Shipping"> Shipping</label>
+                        <label class="choice"><input type="checkbox" name="Fulfillment" value="Pickup"> Local pickup</label>
+                        <label class="choice"><input type="checkbox" name="Fulfillment" value="Delivery"> Local delivery</label>
+                        <label class="choice"><input type="checkbox" name="Fulfillment" value="Not sure"> Not sure yet</label>
+                    </div>
+                </fieldset>
+                <div>
+                    <label class="block-label" for="shipping-tax">Shipping or sales tax notes, if you know them</label>
+                    <input class="field" id="shipping-tax" name="Shipping and sales tax" type="text" placeholder="For example, ship in the US, collect tax in Connecticut">
+                </div>
+            </section>
+
+            <section class="bg-zinc-900/70 border border-zinc-800 rounded-3xl p-6 md:p-8 space-y-5" aria-labelledby="sec-existing">
+                <h2 id="sec-existing" class="heading-font text-2xl font-semibold">Use what you already have</h2>
+                <p class="text-zinc-400 text-sm">If your pages are public, we can pull photos, names and prices for you so you don't have to gather everything by hand. Private accounts: share a folder link instead.</p>
+                <label class="choice">
+                    <input type="checkbox" name="Permission to use existing listings" value="You have my permission to use photos, product listings and text from my Instagram, Facebook and online shop on my new website.">
+                    You have my permission to use photos, product listings and text from my Instagram, Facebook and online shop on my new website.
+                </label>
+                <div>
+                    <label class="block-label" for="instagram">Instagram</label>
+                    <input class="field" id="instagram" name="Instagram" type="text" inputmode="url" autocapitalize="none" spellcheck="false" placeholder="https://instagram.com/yourstudio">
+                </div>
+                <div>
+                    <label class="block-label" for="facebook">Facebook</label>
+                    <input class="field" id="facebook" name="Facebook" type="text" inputmode="url" autocapitalize="none" spellcheck="false">
+                </div>
+                <div>
+                    <label class="block-label" for="etsy">Etsy shop</label>
+                    <input class="field" id="etsy" name="Etsy shop" type="url" inputmode="url" autocapitalize="none" spellcheck="false" placeholder="https://www.etsy.com/shop/yourshop">
+                </div>
+                <div>
+                    <label class="block-label" for="square">Square or Square Online</label>
+                    <input class="field" id="square" name="Square shop" type="url" inputmode="url" autocapitalize="none" spellcheck="false" placeholder="https://">
+                </div>
+                <div>
+                    <label class="block-label" for="shopify">Shopify store</label>
+                    <input class="field" id="shopify" name="Shopify store" type="url" inputmode="url" autocapitalize="none" spellcheck="false" placeholder="https://">
+                </div>
+                <div>
+                    <label class="block-label" for="facebook-shop">Facebook Shop</label>
+                    <input class="field" id="facebook-shop" name="Facebook Shop" type="url" inputmode="url" autocapitalize="none" spellcheck="false" placeholder="https://">
+                </div>
+                <div>
+                    <label class="block-label" for="other-shop">Other shop or social link</label>
+                    <input class="field" id="other-shop" name="Other shop or social link" type="url" inputmode="url" autocapitalize="none" spellcheck="false" placeholder="https://">
+                </div>
+                <div>
+                    <label class="block-label" for="feature-or-leave-out">Any posts or products to feature, or leave out?</label>
+                    <textarea class="field" id="feature-or-leave-out" name="Posts or products to feature or leave out" placeholder="For example, feature the summer collection, or please don't use last year's holiday posts."></textarea>
+                </div>
+                <div>
+                    <label class="block-label" for="photo-link">Shared folder for logos and photos</label>
+                    <input class="field" id="photo-link" name="Shared photo and logo link" type="url" inputmode="url" placeholder="https://drive.google.com/...">
+                    <p class="hint">Google Drive, Dropbox, or iCloud. Please set it so anyone with the link can view. You can also text or email files to Noah.</p>
+                </div>
+            </section>
+
+            <section class="bg-zinc-900/70 border border-zinc-800 rounded-3xl p-6 md:p-8 space-y-5" aria-labelledby="sec-wrapup">
+                <h2 id="sec-wrapup" class="heading-font text-2xl font-semibold">Timing, contact, and anything else</h2>
+                <div>
+                    <label class="block-label" for="launch-date">When would you like to launch?</label>
+                    <input class="field" id="launch-date" name="Launch date" type="text" placeholder="A date, an event you need the site for, or “no rush.”">
+                </div>
+                <div>
+                    <label class="block-label" for="budget">Budget</label>
+                    <input class="field" id="budget" name="Budget" type="text" placeholder="A range is fine, or “please advise.”">
+                </div>
+                <fieldset>
+                    <legend class="block-label mb-3">What should we show on the site so people can reach you?</legend>
+                    <div class="space-y-3">
+                        <label class="choice"><input type="checkbox" name="Contact shown on site" value="Contact form" checked> A contact form</label>
+                        <label class="choice"><input type="checkbox" name="Contact shown on site" value="Email address"> An email address</label>
+                        <label class="choice"><input type="checkbox" name="Contact shown on site" value="Phone number"> A phone number</label>
+                    </div>
+                </fieldset>
+                <div>
+                    <label class="block-label" for="public-email">Email to show or to receive form messages</label>
+                    <input class="field" id="public-email" name="Public or form email" type="email" inputmode="email" placeholder="hello@yourstudio.com">
+                </div>
+                <div>
+                    <label class="block-label" for="public-phone">Phone to show, if any</label>
+                    <input class="field" id="public-phone" name="Public phone" type="tel" inputmode="tel">
+                </div>
+                <div>
+                    <label class="block-label" for="testimonials">Any kind words we may use on the site?</label>
+                    <textarea class="field" id="testimonials" name="Testimonials" placeholder="Paste the quote and the person's name, or leave this blank."></textarea>
+                </div>
+                <label class="choice">
+                    <input type="checkbox" name="Testimonial permission" value="Yes, these may appear on the site">
+                    I have permission to use these quotes on the website
+                </label>
+                <div>
+                    <label class="block-label" for="anything-else">Anything else we should know?</label>
+                    <textarea class="field" id="anything-else" name="Anything else"></textarea>
+                </div>
+            </section>
+
+            <div>
+                <button type="submit" id="submit-btn"
+                        class="w-full bg-[#C9A96E] hover:bg-[#b38c55] text-zinc-950 py-5 rounded-2xl font-semibold text-lg transition-all">
+                    Send intake
+                </button>
+                <p id="form-error" class="hidden mt-4 text-center text-red-400">Sorry, that didn't send. Please try again in a moment.</p>
+                <div id="form-success" class="hidden mt-6 text-center p-5 bg-emerald-900/30 border border-emerald-600 rounded-2xl">
+                    <p class="text-emerald-400 font-medium">Thank you — your intake was sent.</p>
+                    <p class="text-emerald-300 text-sm mt-1">Noah will review it and follow up if anything is missing.</p>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <footer class="border-t border-zinc-800 py-10 text-center text-zinc-500 text-sm">
+        <p>© 2026 Noah's Arc Media</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('intake-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const successMessage = document.getElementById('form-success');
+        const errorMessage = document.getElementById('form-error');
+        const subjectField = document.getElementById('intake-subject');
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            errorMessage.classList.add('hidden');
+
+            if (!form.reportValidity()) {
+                const firstBad = form.querySelector(':invalid');
+                if (firstBad) firstBad.focus();
+                return;
+            }
+
+            const business = (form.querySelector('#business-name').value || '').trim();
+            subjectField.value = business ? ('New website intake: ' + business) : 'New website intake';
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'SENDING...';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    form.reset();
+                    subjectField.value = 'New website intake';
+                    successMessage.classList.remove('hidden');
+                    submitBtn.textContent = 'SENT';
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (err) {
+                errorMessage.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send intake';
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    </script>
+</body>
+</html>
