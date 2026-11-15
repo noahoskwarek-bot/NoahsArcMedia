@@ -277,6 +277,18 @@
                             <p class="text-zinc-400 text-sm">Custom-built, mobile-friendly websites and online stores — with product pages, checkout, and domain &amp; hosting setup.</p>
                         </div>
                     </div>
+                    <div class="text-center px-2 py-2 md:py-4">
+                        <p class="heading-font text-3xl md:text-4xl font-semibold leading-tight">
+                            Your booth, selling online in 2 weeks, for <span class="text-[#C9A96E]">under $1,000</span>.
+                        </p>
+                        <p class="text-zinc-400 mt-3 max-w-2xl mx-auto">
+                            Custom website with online checkout (Stripe), built for makers and small businesses.
+                        </p>
+                        <button type="button" onclick="startWebsiteProject()"
+                                class="mt-6 bg-[#C9A96E] hover:bg-[#b38c55] text-zinc-950 px-8 py-4 rounded-2xl font-semibold transition-all">
+                            Start your site
+                        </button>
+                    </div>
                     <div>
                         <p class="text-[#C9A96E] text-xs tracking-wider mb-3">Recent work</p>
                         <div class="grid sm:grid-cols-2 gap-4">
@@ -604,6 +616,13 @@
             }
         }
         document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+        function startWebsiteProject() {
+            const website = document.querySelector('input[name="service"][value="Website"]');
+            if (website) {
+                website.checked = true;
+            }
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
         const portfolioItems = [
             {
                 title: "Lucas Graduation Tribute",
